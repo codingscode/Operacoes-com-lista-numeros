@@ -7,10 +7,8 @@
 
         <button class="botaocalc" @click="calcularmdc(lista)">Calcular MDC</button>
         <div class="cresultado">o mdc é : <div class="resultado">{{mdc}}</div></div>
-
+        <button class="limpar" @click="limpar()">Limpar lista</button>
     </div>
-
-
 </template>
 
 <script>
@@ -31,7 +29,11 @@ export default {
         },
         calcularmdc() {
             this.mdc = calc_mdc(this.lista)
-        }
+        },
+        limpar() {
+             this.lista = []
+             this.mdc = null
+        }  
     }
 }
 </script>
@@ -55,7 +57,7 @@ export default {
         margin: 10px 0px;
     }
 
-    .botaocalc {
+    .botaocalc, .limpar {
         background: gold;
         height: 40px;
         border-radius: 4px;

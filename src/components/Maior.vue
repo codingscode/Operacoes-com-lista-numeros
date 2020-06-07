@@ -8,7 +8,8 @@
           <div class="cresultado" > 
               Maior elemento
               <div class="resultado" >{{maior}}</div>
-           </div>
+          </div>
+          <button class="limpar" @click="limpar()">Limpar lista</button>
      </div>
      
 </template>
@@ -31,8 +32,11 @@ export default {
          },
          maiorcalc(lista) {
              this.maior = maior_calc(lista)
-         }
-             
+         },
+         limpar() {
+             this.valores = []
+             this.maior = null
+         }  
      }
 }
 
@@ -60,7 +64,7 @@ export default {
         margin: 10px 0px;
     }
 
-    .botaocalc {
+    .botaocalc, .limpar {
         background: gold;
         height: 40px;
         border-radius: 4px;

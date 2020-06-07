@@ -7,7 +7,7 @@
 
        <button class="botaocalc" @click="calcularmmc(lista)">Calcular MMC</button>
        <div class="cresultado">o mmc é :  <div class="resultado"> {{mmc}}</div></div>
-    
+       <button class="limpar" @click="limpar()">Limpar lista</button>
     </div>
 </template>
 
@@ -29,6 +29,10 @@ export default {
         },
         calcularmmc() {
             this.mmc = calc_mmc(this.lista)
+        },
+        limpar() {
+             this.lista = []
+             this.mmc = null
         }
     }
 }
@@ -53,7 +57,7 @@ export default {
         margin: 10px 0px;
     }
 
-    .botaocalc {
+    .botaocalc, .limpar {
         background: gold;
         height: 40px;
         border-radius: 4px;

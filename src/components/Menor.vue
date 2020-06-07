@@ -9,7 +9,7 @@
             Menor elemento:
             <div class="resultado">{{menor}}</div>
         </div>
-
+        <button class="limpar" @click="limpar()">Limpar lista</button>
     </div>
 </template>
 
@@ -31,8 +31,11 @@ export default {
          },
          menorcalc(lista) {
              this.menor = menor_calc(lista)
-         }
-             
+         },
+         limpar() {
+             this.valores = []
+             this.menor = null
+         }     
      }
 }
 </script>
@@ -56,7 +59,7 @@ export default {
         margin: 10px 0px;
     }
 
-    .botaocalc {
+    .botaocalc, .limpar {
         background: gold;
         height: 40px;
         border-radius: 4px;
